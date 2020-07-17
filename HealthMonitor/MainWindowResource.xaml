@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:HealthMonitor.ViewModels"
+                    xmlns:vw="clr-namespace:HealthMonitor.Views"
+                    >
+    <DataTemplate DataType="{x:Type vm:MainViewModel}">
+        <vw:MainView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddLogViewModel}">
+        <vw:AddLogView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:EditLogViewModel}">
+        <vw:EditLogView />
+    </DataTemplate>
+    
+    <DataTemplate x:Key="WorkspacesTemplate">
+        <ItemsControl ItemsSource="{Binding}" />
+    </DataTemplate>
+    
+</ResourceDictionary>

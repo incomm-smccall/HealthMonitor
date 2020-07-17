@@ -1,0 +1,34 @@
+﻿<Window x:Class="HealthMonitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HealthMonitor"
+        Title="Health Monitor" Height="630" Width="830">
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowResource.xaml" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu x:Name="mainMenu" IsMainMenu="True" Width="Auto" Grid.Row="0" Grid.Column="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Main" Command="{Binding MenuMain}" />
+                <MenuItem Header="Exit" Command="{Binding MenuExit}" />
+            </MenuItem>
+            <MenuItem Header="Logs">
+                <MenuItem Header="Add Log" Command="{Binding MenuAddLog}" />
+                <MenuItem Header="Edit Log" Command="{Binding MenuEditLog}" />
+                <MenuItem Header="Delete Log" Command="{Binding MenuDeleteLog}" />
+            </MenuItem>
+            <MenuItem Header="Records">
+                <MenuItem Header="Add Record" Command="{Binding MenuAddNew}" />
+                <MenuItem Header="Remove Record" Command="{Binding}" />
+            </MenuItem>
+        </Menu>
+        <ContentControl Grid.Row="1" Grid.Column="0" Name="ContentWorkspace" Content="{Binding Path=Workspaces}" ContentTemplate="{StaticResource WorkspacesTemplate}" />
+    </Grid>
+</Window>
